@@ -2,7 +2,7 @@ import { eventKeyConfig } from "../config/eventKeyConfig";
 import FireBaseLogEvent from "./firebaseLogEvent";
 import { eventNameConfig } from "../config/eventNameConfig";
 
-export const __FireBase_view_promotion_list = (data, cartReducer = '', isNoCart) => {
+export const FireBase_view_promotion_list = (data, cartReducer = '', isNoCart) => {
     let cart_value = 0;
     if (cartReducer && cartReducer.cartVariantSummaryList && cartReducer.cartVariantSummaryList.length > 0) {
         cartReducer.cartVariantSummaryList.map((item) => {
