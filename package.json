@@ -1,16 +1,32 @@
 {
   "name": "events-tree",
   "version": "0.1.0",
-  "private": true,
+  "source": "src/app/page.js",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "devbuild": "rollup -c --environment NODE_ENV:development",
+    "prodbuild": "rollup -c --environment NODE_ENV:production",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "firebase": "^10.9.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "rollup": "^4.9.6"
+  },
+  "peerDependencies": {
+    "next": "14.1.4",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.4"
+    "react-dom": "^18"
   }
 }
