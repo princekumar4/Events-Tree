@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 const FireBaseInit = (callback, eventname, eventData) => {
     try {
+        console.log("firebase init called");
         // if (ISPROD) {
         if (typeof window !== "undefined") {
             const app = initializeApp(firebaseConfig);
@@ -25,7 +26,7 @@ const FireBaseInit = (callback, eventname, eventData) => {
                 }, 100);
             }
         }
-        // console.log('>\x1b[30m\x1b[42mFireBase is disabled for local environment\x1b[0m\n');
+        console.log('>\x1b[30m\x1b[42mFireBase is disabled for local environment\x1b[0m\n');
     } catch (error) {
         console.log("Error:", error);
     }
