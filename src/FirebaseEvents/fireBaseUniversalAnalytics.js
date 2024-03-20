@@ -17,6 +17,7 @@ export const FireBase_view_promotion_list = (data, cartReducer = '', isNoCart) =
     if (isNoCart) {
         delete eventData[[eventKeyConfig['cart_value']]];
     }
+    console.log("Fired from events-tree");
     FireBaseLogEvent(eventNameConfig['view_promotion'], eventData);
 };
 
