@@ -152,6 +152,14 @@ export const FireBase_add_to_cart = (data) => {
     FireBaseLogEvent(eventNameConfig['add_to_cart'], eventData);
 };
 
+export const FireBase_buy_now = (data) => {
+    const eventData = {
+        currency: 'INR',
+        ...data
+    };
+    FireBaseLogEvent(eventNameConfig['add_to_cart'], eventData);
+};
+
 // export const FireBase_order_initiated = (data, step, option) => {
 //     const eventData = {
 //         currency: 'INR',
@@ -159,12 +167,4 @@ export const FireBase_add_to_cart = (data) => {
 //         ...data
 //     };
 //     FireBaseLogEvent(eventNameConfig['order_initiated'], eventData);
-// };
-
-// export const FireBase_buy_now = (data) => {
-//     const eventData = {
-//         currency: 'INR',
-//         ...data
-//     };
-//     FireBaseLogEvent(eventNameConfig['add_to_cart'], eventData);
 // };
