@@ -3,7 +3,6 @@ import FireBaseLogEvent from "./firebaseLogEvent";
 import { eventNameConfig } from "../config/eventNameConfig";
 
 export const FireBase_view_promotion = (data, cartReducer = '', isNoCart) => {
-    console.log("FireBase_view_promotion calling");
     let cart_value = 0;
     if (cartReducer && cartReducer.cartVariantSummaryList && cartReducer.cartVariantSummaryList.length > 0) {
         cartReducer.cartVariantSummaryList.map((item) => {
@@ -18,11 +17,10 @@ export const FireBase_view_promotion = (data, cartReducer = '', isNoCart) => {
     if (isNoCart) {
         delete eventData[[eventKeyConfig['cart_value']]];
     }
-    console.log("Fired from events-tree");
     FireBaseLogEvent(eventNameConfig['view_promotion'], eventData);
 };
 
-export const __FireBase_view_item_list = (data, cartReducer, isNoCart) => {
+export const FireBase_view_item_list = (data, cartReducer, isNoCart) => {
     let cart_value = 0;
     if (cartReducer && cartReducer.cartVariantSummaryList && cartReducer.cartVariantSummaryList.length > 0) {
         cartReducer.cartVariantSummaryList.map((item) => {
@@ -42,7 +40,7 @@ export const __FireBase_view_item_list = (data, cartReducer, isNoCart) => {
     FireBaseLogEvent(eventNameConfig['view_item_list'], eventData);
 };
 
-export const __FireBase_view_item = (data) => {
+export const FireBase_view_item = (data) => {
     const eventData = {
         currency: 'INR',
         ...data
@@ -50,7 +48,7 @@ export const __FireBase_view_item = (data) => {
     FireBaseLogEvent(eventNameConfig['view_item'], eventData);
 };
 
-export const __FireBase_select_item = (data) => {
+export const FireBase_select_item = (data) => {
     const eventData = {
         currency: 'INR',
         ...data
@@ -58,7 +56,7 @@ export const __FireBase_select_item = (data) => {
     FireBaseLogEvent(eventNameConfig['select_item'], eventData);
 };
 
-export const __FireBase_select_promotion = (data) => {
+export const FireBase_select_promotion = (data) => {
     const eventData = {
         currency: 'INR',
         ...data
@@ -66,7 +64,7 @@ export const __FireBase_select_promotion = (data) => {
     FireBaseLogEvent(eventNameConfig['select_promotion'], eventData);
 };
 
-export const __FireBase_begin_checkout = (data, step, option) => {
+export const FireBase_begin_checkout = (data, step, option) => {
     const eventData = {
         currency: 'INR',
         'actionField': { 'step': step, 'option': option },
@@ -75,7 +73,7 @@ export const __FireBase_begin_checkout = (data, step, option) => {
     FireBaseLogEvent(eventNameConfig['begin_checkout'], eventData);
 };
 
-export const __FireBase_add_shipping_info = (data, step, option) => {
+export const FireBase_add_shipping_info = (data, step, option) => {
     const eventData = {
         currency: 'INR',
         'actionField': { 'step': step, 'option': option },
@@ -84,7 +82,7 @@ export const __FireBase_add_shipping_info = (data, step, option) => {
     FireBaseLogEvent(eventNameConfig['add_shipping_info'], eventData);
 };
 
-export const __FireBase_add_payment_info = (data, step, option) => {
+export const FireBase_add_payment_info = (data, step, option) => {
     const eventData = {
         currency: 'INR',
         'actionField': { 'step': step, 'option': option },
@@ -93,23 +91,14 @@ export const __FireBase_add_payment_info = (data, step, option) => {
     FireBaseLogEvent(eventNameConfig['add_payment_info'], eventData);
 };
 
-export const __FireBase_order_initiated = (data, step, option) => {
-    const eventData = {
-        currency: 'INR',
-        'actionField': { 'step': step, 'option': option },
-        ...data
-    };
-    FireBaseLogEvent(eventNameConfig['order_initiated'], eventData);
-};
-
-export const __FireBase_user_attr = (data) => {
+export const FireBase_user_attr = (data) => {
     const eventData = {
         ...data
     };
     FireBaseLogEvent(data.event_name, eventData);
 };
 
-export const __FireBase_purchase = (data) => {
+export const FireBase_purchase = (data) => {
     const eventData = {
         currency: 'INR',
         transaction_id: data.actionField.id,
@@ -123,7 +112,7 @@ export const __FireBase_purchase = (data) => {
     FireBaseLogEvent(eventNameConfig['purchase'], eventData);
 };
 
-export const __FireBase_view_cart = (data) => {
+export const FireBase_view_cart = (data) => {
     const eventData = {
         currency: 'INR',
         ...data
@@ -131,7 +120,7 @@ export const __FireBase_view_cart = (data) => {
     FireBaseLogEvent(eventNameConfig['view_cart'], eventData);
 };
 
-export const __FireBase_add_to_wishlist = (data) => {
+export const FireBase_add_to_wishlist = (data) => {
     const eventData = {
         currency: 'INR',
         ...data
@@ -139,15 +128,15 @@ export const __FireBase_add_to_wishlist = (data) => {
     FireBaseLogEvent(eventNameConfig['add_to_wishlist'], eventData);
 };
 
-export const __FireBase_cart_update = (data, promotion_name) => {
-    if(promotion_name=='quantity increase'){
-        __FireBase_add_to_cart(data);
-    }else if(promotion_name =='quantity decrease'){
-        __FireBase_remove_from_cart(data);
+export const FireBase_cart_update = (data, promotion_name) => {
+    if (promotion_name == 'quantity increase') {
+        FireBase_add_to_cart(data);
+    } else if (promotion_name == 'quantity decrease') {
+        FireBase_remove_from_cart(data);
     }
 };
 
-export const __FireBase_remove_from_cart = (data) => {
+export const FireBase_remove_from_cart = (data) => {
     const eventData = {
         currency: 'INR',
         ...data
@@ -155,7 +144,7 @@ export const __FireBase_remove_from_cart = (data) => {
     FireBaseLogEvent(eventNameConfig['remove_from_cart'], eventData);
 };
 
-export const __FireBase_add_to_cart = (data) => {
+export const FireBase_add_to_cart = (data) => {
     const eventData = {
         currency: 'INR',
         ...data
@@ -163,10 +152,19 @@ export const __FireBase_add_to_cart = (data) => {
     FireBaseLogEvent(eventNameConfig['add_to_cart'], eventData);
 };
 
-export const __FireBase_buy_now = (data) => {
-    const eventData = {
-        currency: 'INR',
-        ...data
-    };
-    FireBaseLogEvent(eventNameConfig['add_to_cart'], eventData);
-};
+// export const FireBase_order_initiated = (data, step, option) => {
+//     const eventData = {
+//         currency: 'INR',
+//         'actionField': { 'step': step, 'option': option },
+//         ...data
+//     };
+//     FireBaseLogEvent(eventNameConfig['order_initiated'], eventData);
+// };
+
+// export const FireBase_buy_now = (data) => {
+//     const eventData = {
+//         currency: 'INR',
+//         ...data
+//     };
+//     FireBaseLogEvent(eventNameConfig['add_to_cart'], eventData);
+// };

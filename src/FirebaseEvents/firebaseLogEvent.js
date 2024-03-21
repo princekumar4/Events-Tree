@@ -104,7 +104,7 @@ const FireBaseLogEvent = (eventname, eventData) => {
     let payload = { ...defaultParam, ...eventData };
     if (window.firebaseAnalytics) {
         //console.log('>\x1b[30m\x1b[42mFireBase is disabled for local environment\x1b[0m\n');
-        console.log(`payload:v1 ----for ${eventname} event is `, payload);
+        // console.log(`payload:v1 ----for ${eventname} event is `, payload);
         logEvent(window.firebaseAnalytics, eventname, payload);
     } else {
         FireBaseInit(true, eventname, eventData);
