@@ -1,6 +1,6 @@
 {
-  "name": "events-tree",
-  "version": "0.1.0",
+  "name": "hk-events-tree",
+  "version": "0.0.1",
   "source": "src/app/page.js",
   "main": "dist/index.js",
   "type": "module",
