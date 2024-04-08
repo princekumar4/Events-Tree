@@ -1,14 +1,14 @@
 import { logEvent } from "firebase/analytics";
-import FireBaseInit from './index';
-import config from "../config/config";
-import { eventKeyConfig } from "../config/eventKeyConfig";
+import FireBaseInit from '../index';
+import config from "../../config/config";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
 import {
     __getCookie,
     __isMobile,
     __localStorageGet,
     __loggedIn,
     __sessionStorageGet,
-} from "../factoryMethods/service";
+} from "../../factoryMethods/service";
 
 const getDefaultParam = (eventname) => {
     let pagename = __localStorageGet("prevScreenName");

@@ -1,6 +1,6 @@
-import { eventKeyConfig } from "../config/eventKeyConfig";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
 import FireBaseLogEvent from "./firebaseLogEvent";
-import { eventNameConfig } from "../config/eventNameConfig";
+import { eventNameConfig } from "../../config/eventNameConfig";
 
 export const FireBase_view_promotion = (data, cartReducer = '', isNoCart) => {
     let cart_value = 0;

@@ -1,5 +1,5 @@
 {
-  "name": "hk-events-tree",
+  "name": "bright-events-tree",
   "version": "0.0.3",
   "source": "src/app/page.js",
   "main": "dist/index.js",

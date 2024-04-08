@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import FireBaseLogEvent from "./firebaseLogEvent";
+import FireBaseLogEvent from "./components/firebaseLogEvent";
 import { useState } from "react";
 
 const FireBaseInit = (firebaseConfig, callback, eventname, eventData) => {
