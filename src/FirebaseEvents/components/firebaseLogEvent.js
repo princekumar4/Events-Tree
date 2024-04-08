@@ -99,7 +99,7 @@ const getDefaultParam = (eventname) => {
     return _defaults;
 };
 
-const FireBaseLogEvent = (eventname, eventData) => {
+const FireBaseLogEvent = (eventname, eventData, firebaseConfigState = {}) => {
     let defaultParam = getDefaultParam(eventname);
     let payload = { ...defaultParam, ...eventData };
     if (window.firebaseAnalytics) {
@@ -107,7 +107,7 @@ const FireBaseLogEvent = (eventname, eventData) => {
         // console.log(`payload:v1 ----for ${eventname} event is `, payload);
         logEvent(window.firebaseAnalytics, eventname, payload);
     } else {
-        FireBaseInit({}, true, eventname, eventData);
+        FireBaseInit(firebaseConfigState, true, eventname, eventData);
     }
 };
 

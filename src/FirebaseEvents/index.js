@@ -14,7 +14,7 @@ const FireBaseInit = (firebaseConfig, callback, eventname, eventData) => {
             window.firebaseAnalytics = getAnalytics(app);
             if (callback) {
                 setTimeout(() => {
-                    FireBaseLogEvent(eventname, eventData);
+                    FireBaseLogEvent(eventname, eventData, firebaseConfigState);
                 }, 100);
             }
         }
