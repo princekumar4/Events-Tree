@@ -1,24 +1,16 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import FireBaseLogEvent from "./firebaseLogEvent";
+import { useState } from "react";
 
-const isProd = process.env.NEXT_PUBLIC_FIREBASE_CONFIG === "production" || false;
+const FireBaseInit = (firebaseConfig, callback, eventname, eventData) => {
 
-const firebaseConfig = {
-    apiKey: isProd ? "AIzaSyAXNEHxlN27x68X4rvtZKN5Mq91RVD8Vag" : "AIzaSyDO9qDQYJJpLPbFQp5HBFTTdj3avB2__Gs",
-    authDomain: isProd ? "webwebmuscleblaze.firebaseapp.com" : "webbetamuscleblaze.firebaseapp.com",
-    projectId: isProd ? "webwebmuscleblaze" : "webbetamuscleblaze",
-    storageBucket: isProd ? "webwebmuscleblaze.appspot.com" : "webbetamuscleblaze.appspot.com",
-    messagingSenderId: isProd ? "173635279784" : "47916220971",
-    appId: isProd ? "1:173635279784:web:ca53c32b4b29b9abb8db9d" : "1:47916220971:web:3b6221dec6029935cc206e",
-    measurementId: isProd ? "G-SF8VP2L1ZR" : "G-BJF6KTKLJM",
-};
+    const [firebaseConfigState] = useState(firebaseConfig);
 
-const FireBaseInit = (callback, eventname, eventData) => {
     try {
         // if (ISPROD) {
         if (typeof window !== "undefined") {
-            const app = initializeApp(firebaseConfig);
+            const app = initializeApp(firebaseConfigState);
             window.firebaseAnalytics = getAnalytics(app);
             if (callback) {
                 setTimeout(() => {

@@ -107,7 +107,7 @@ const FireBaseLogEvent = (eventname, eventData) => {
         // console.log(`payload:v1 ----for ${eventname} event is `, payload);
         logEvent(window.firebaseAnalytics, eventname, payload);
     } else {
-        FireBaseInit(true, eventname, eventData);
+        FireBaseInit({}, true, eventname, eventData);
     }
 };
 
