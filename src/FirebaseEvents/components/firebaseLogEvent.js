@@ -8,7 +8,7 @@ import {
     __localStorageGet,
     __loggedIn,
     __sessionStorageGet,
-} from "../../factoryMethods/service";
+} from "../../Services/service";
 
 const getDefaultParam = (eventname) => {
     let pagename = __localStorageGet("prevScreenName");

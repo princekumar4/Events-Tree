@@ -1,3 +1,5 @@
+import { eventKeyConfig } from "@/config/eventKeyConfig";
+
 const chekIfJsonOrString = (data) => {
     var ret = true;
     try {
@@ -123,4 +125,101 @@ export const __sessionStorageGet = (key) => {
         }
     }
     return temp;
+};
+
+export const __sessionStorageSet = (key, value) => {
+    let temp;
+    if ((value == null) || (value == undefined)) {
+        return;
+    }
+    if (!value || (value && typeof value == "boolean") || (value && (typeof value == 'string' || value instanceof String))) {
+        temp = value;
+    } else {
+        temp = JSON.stringify(value);
+    }
+    sessionStorage && sessionStorage.setItem(key, temp);
+};
+
+export const __getTabInfo = (parentTabInfo) => {
+    let tabInfo = {};
+    if (parentTabInfo && parentTabInfo.creative_name) {
+        tabInfo[eventKeyConfig['creative_slot']] = parentTabInfo.creative_slot || 0;
+        tabInfo[eventKeyConfig['creative_name']] = parentTabInfo.creative_name || '';
+    }
+    return tabInfo;
+};
+
+export const __getSlotInfo = (indexPosition) => {
+    let temp = {};
+    let isListIndex = false;
+    if (window.pageType === "menuLanding" || window.pageType === "search" || window.pageType === "clearance" || window.pageType === "brandCatalog" || window.pageType === 'search' || window.pageType === 'catPageNew') {
+        isListIndex = true;
+    }
+    if (isListIndex) {
+        temp[eventKeyConfig['item_list_index']] = indexPosition;
+        temp[eventKeyConfig['promotion_slot']] = indexPosition || '';
+        temp[eventKeyConfig['promotion_id']] = indexPosition || '';
+    } else {
+        temp[eventKeyConfig['promotion_slot']] = indexPosition || '';
+        temp[eventKeyConfig['promotion_id']] = indexPosition || '';
+    }
+    return temp;
+};
+
+export const __createShopByFlavourItemProps = (d, itemPosition, promotion_name = '', parentTabInfo = {}) => {
+    const tabInfo = __getTabInfo(parentTabInfo);
+    const slotInfo = __getSlotInfo(itemPosition);
+    let item = {
+        ...tabInfo,
+        [eventKeyConfig['item_name']]: d.dis_nm || (d.imgItm && d.imgItm.alt) || '',
+        [eventKeyConfig['url']]: d.imgItm && d.imgItm.lp,
+        [eventKeyConfig['promotion_name']]: promotion_name,
+        ...slotInfo,
+    };
+    return item;
+};
+
+export const __createHomeTopCategoriesItem = (imgItm, itemPosition, promotion_name) => {
+    const slotInfo = __getSlotInfo(itemPosition);
+    let item = {
+        [eventKeyConfig['item_name']]: imgItm.alt || '',
+        [eventKeyConfig['url']]: imgItm.lp || '',
+        [eventKeyConfig['promotion_name']]: promotion_name,
+        ...slotInfo,
+    };
+    return item;
+};
+
+export const __urlMaker = (fragment, navkey, itracker) => {
+    itracker = itracker || false;
+    let _start = '';
+    if (navkey) {
+        if (navkey.indexOf('BR-') > -1) {
+            _start = '';
+        } else if (navkey.indexOf('VRNT-') > -1) {
+            _start = '/sv';
+        } else if (navkey.indexOf('PA-') > -1) {
+            _start = '/pk';
+        }
+    }
+    let _url = _start + fragment;
+    if (navkey && _url.indexOf('navKey') === -1) {
+        _url = _start + fragment + (navkey ? '?navKey=' + navkey : '');
+    }
+    _url += itracker ? '&' + __itracker(...itracker) : '';
+    _url = _url.replace(process.env.REACT_APP_ACTUAL_PUBLIC_URL, "");
+    _url = _url.replace('https://www.muscleblaze.com', "");
+    return _url;
+};
+
+export const __getSearchParmas = (string, ssrQuery) => {
+    let result = {};
+    if (typeof window !== 'undefined') {
+        string = string || window.location.href;
+        var url = URL(string, true);
+        result = url.query;
+    } else {
+        result = ssrQuery || {};
+    }
+    return result;
 };

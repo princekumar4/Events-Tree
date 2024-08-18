@@ -160,11 +160,45 @@ export const FireBase_buy_now = (data) => {
     FireBaseLogEvent(eventNameConfig['add_to_cart'], eventData);
 };
 
-// export const FireBase_order_initiated = (data, step, option) => {
-//     const eventData = {
-//         currency: 'INR',
-//         'actionField': { 'step': step, 'option': option },
-//         ...data
-//     };
-//     FireBaseLogEvent(eventNameConfig['order_initiated'], eventData);
-// };
+export const FireBase_Login_and_SignUp = (loginState) => {
+    const params = {
+        method: "phone"
+    };
+    FireBaseLogEvent(loginState ? eventNameConfig['login'] : eventNameConfig['sign_up'], params);
+};
+
+export const FireBase_view_all_less = (data) => {
+    const eventData = {
+        currency: 'INR',
+        ...data
+    };
+    FireBaseLogEvent(eventNameConfig['select_promotion'], eventData);
+}
+
+export const FireBase_Signup_initiation_Successful = (data) => {
+    const eventData = {
+        ...data
+    };
+    FireBaseLogEvent(eventNameConfig['Signup_initiation_Successful'], eventData);
+};
+
+export const FireBase_Signup_initiation_Unsuccessful = (data) => {
+    const eventData = {
+        ...data
+    };
+    FireBaseLogEvent(eventNameConfig['Signup_initiation_Unsuccessful'], eventData);
+};
+
+export const FireBase_Signup_Successful = (data) => {
+    const eventData = {
+        ...data
+    };
+    FireBaseLogEvent(eventNameConfig['Signup_Successful'], eventData);
+};
+
+export const FireBase_Signup_unsuccessful = (data) => {
+    const eventData = {
+        ...data
+    };
+    FireBaseLogEvent(eventNameConfig['Signup_unsuccessful'], eventData);
+}
