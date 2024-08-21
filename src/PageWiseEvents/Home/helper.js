@@ -1,5 +1,4 @@
 import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { FireBase_select_promotion } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
 import { __createHomeTopCategoriesItem, __getSlotInfo, __getTabInfo } from "@/Services/service";
 
 export const HomeTopCategoriesItemsProps = (data = [], promotion_name = '', parentTabInfo = {}) => {
@@ -95,20 +94,6 @@ export const HomeWidgitPromotions = (data = [], promotion_name = '', parentTabIn
             }
             let spName = d.nm || d.spName;
             let slotInfo = __getSlotInfo(i + 1);
-            // productAttr.push({
-            //     name: spName,
-            //     id: d.id || '',
-            //     price: d.offer_pr || '',
-            //     brand: d.brName || '',
-            //     category: d.catName || '',
-            //     variant: "",
-            //     list: window.pageType || '',
-            //     position: i + 1,
-            //     dimension6: window.pageType || '',
-            //     dimension7: d.oos ? "Out_of_Stock" : "In_Stock",
-            //     dimension8: d.discount,
-            //     dimension9: ''
-            // });
             let firebaseitem = {
                 ...tabInfo,
                 ...slotInfo,

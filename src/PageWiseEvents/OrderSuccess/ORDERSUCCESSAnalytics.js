@@ -3,7 +3,7 @@ import { __getCookie, __isMobile } from "@/Services/service";
 import { createFireBaseObj } from "./helper";
 import { __getPackAttrs } from "../Pdp/helper";
 
-export const OrderSuccessDataFIrebaseEvent = (orderData) => {
+export const OrderSuccessDataFirebaseEvent = (orderData) => {
     let itemPosition = 0;
     let firebaseAttr = [];
     let btnflow = localStorage.getItem('Flow');

@@ -31,7 +31,6 @@ export const cartItmsFireBaseObj = (d, itemPosition, filter, btnflow, packAttr =
     } catch (err) {
         console.log(err);
     }
-
 };
 
 export const clickedCartItem = (data, dataIndex, promotion_name) => {
@@ -49,7 +48,6 @@ export const clickedCartItem = (data, dataIndex, promotion_name) => {
     } catch (err) {
         console.log(err);
     }
-
 };
 
 export const __cartActionObj = (d, flow = '', promotion_name = null) => {
