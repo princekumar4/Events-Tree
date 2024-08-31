@@ -1,5 +1,5 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { __createHomeTopCategoriesItem, __getSlotInfo, __getTabInfo } from "@/Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
+import { __createHomeTopCategoriesItem, __getSlotInfo, __getTabInfo } from "../../Services/service";
 
 export const HomeTopCategoriesItemsProps = (data = [], promotion_name = '', parentTabInfo = {}) => {
     let firebaseAttr = [];

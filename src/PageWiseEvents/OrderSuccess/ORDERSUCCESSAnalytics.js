@@ -1,5 +1,5 @@
-import { FireBase_purchase } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
-import { __getCookie, __isMobile } from "@/Services/service";
+import { FireBase_purchase } from "../../FirebaseEvents/components/fireBaseUniversalAnalytics";
+import { __getCookie, __isMobile } from "../../Services/service";
 import { createFireBaseObj } from "./helper";
 import { __getPackAttrs } from "../Pdp/helper";
 

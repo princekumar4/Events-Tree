@@ -1,5 +1,5 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { __getSlotInfo } from "@/Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
+import { __getSlotInfo } from "../../Services/service";
 
 export const __L2_cat_data = (_variant = [], promotionName = '') => {
     try {

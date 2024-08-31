@@ -1,5 +1,5 @@
-import { FireBase_select_item, FireBase_select_promotion, FireBase_view_promotion } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
-import { __createHomeTopCategoriesItem, __createShopByFlavourItemProps, __getSlotInfo, __getTabInfo } from "@/Services/service";
+import { FireBase_select_item, FireBase_select_promotion, FireBase_view_promotion } from "../../FirebaseEvents/components/fireBaseUniversalAnalytics";
+import { __createHomeTopCategoriesItem, __createShopByFlavourItemProps, __getSlotInfo, __getTabInfo } from "../../Services/service";
 import { ___HomeWidgitItemProps, __HomeCategoriesPromotions, HomeBannerItemProps, HomeBannerPromotionList, HomeTopCategoriesItemsProps, HomeWidgitPromotions } from "./helper";
 
 export const HomePageWidgetPromotions = (data, title, parentTabInfo, CARTReducer) => {

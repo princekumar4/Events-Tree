@@ -1,6 +1,6 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { FireBase_select_promotion, FireBase_view_all_less, FireBase_view_item, FireBase_view_promotion } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
-import { __getSlotInfo } from "@/Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
+import { FireBase_select_promotion, FireBase_view_all_less, FireBase_view_item, FireBase_view_promotion } from "../../FirebaseEvents/components/fireBaseUniversalAnalytics";
+import { __getSlotInfo } from "../../Services/service";
 import { __Offers_item_props, __other_Impression_data, __pdp_combo_item_props, __pdp_comboData_props, __PK_Impression_data, __SV_Impression_data, __yml_item_props, _pdp_mayLike_props } from "./helper";
 
 export const PdpYouMayLikeWidget = (data, promotion_name) => {

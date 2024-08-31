@@ -1,6 +1,6 @@
-import { __getSearchParmas, __isMobile } from "@/Services/service";
+import { __getSearchParmas, __isMobile } from "../../Services/service";
 import { createFirebaseDataLayer, getStepTitle } from "./helper";
-import { FireBase_add_payment_info, FireBase_add_shipping_info, FireBase_begin_checkout } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
+import { FireBase_add_payment_info, FireBase_add_shipping_info, FireBase_begin_checkout } from "../../FirebaseEvents/components/fireBaseUniversalAnalytics";
 
 export const CheckoutStepEvent = (firebaseData, step) => {
     let index = 0;

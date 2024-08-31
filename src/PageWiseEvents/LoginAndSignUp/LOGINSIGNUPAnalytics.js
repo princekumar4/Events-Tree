@@ -1,8 +1,8 @@
-import { eventNameConfig } from "@/config/eventNameConfig";
-import { FireBase_Login_and_SignUp, FireBase_Signup_initiation_Successful, FireBase_Signup_initiation_Unsuccessful, FireBase_Signup_Successful, FireBase_Signup_unsuccessful, FireBase_user_attr } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
+import { eventNameConfig } from "../../config/eventNameConfig";
+import { FireBase_Login_and_SignUp, FireBase_Signup_initiation_Successful, FireBase_Signup_initiation_Unsuccessful, FireBase_Signup_Successful, FireBase_Signup_unsuccessful, FireBase_user_attr } from "../../FirebaseEvents/components/fireBaseUniversalAnalytics";
 import { __UserAnalyticsPromotion } from "./helper";
-import { __localStorageGet } from "@/Services/service";
-import { eventKeyConfig } from "@/config/eventKeyConfig";
+import { __localStorageGet } from "../../Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
 
 export const SetUserDataFirebaseEvent = (userData, isSignUpCall) => {
     let eventAttr;

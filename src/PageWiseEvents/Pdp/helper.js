@@ -1,5 +1,5 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { __getSlotInfo, __isMobile, __urlMaker } from "@/Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
+import { __getSlotInfo, __isMobile, __urlMaker } from "../../Services/service";
 
 export const __pdp_comboData_props = (data = [], promotion_name = '', parentTabInfo, nm) => {
     let firebaseAttr = [];

@@ -1,4 +1,4 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
+import { eventKeyConfig } from "../config/eventKeyConfig";
 
 const chekIfJsonOrString = (data) => {
     var ret = true;

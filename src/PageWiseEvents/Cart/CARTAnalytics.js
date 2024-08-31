@@ -1,7 +1,7 @@
-import { eventNameConfig } from "@/config/eventNameConfig";
-import { FireBase_add_to_cart, FireBase_add_to_wishlist, FireBase_buy_now, FireBase_cart_update, FireBase_select_promotion, FireBase_view_all_less, FireBase_view_cart } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
+import { eventNameConfig } from "../../config/eventNameConfig";
+import { FireBase_add_to_cart, FireBase_add_to_wishlist, FireBase_buy_now, FireBase_cart_update, FireBase_select_promotion, FireBase_view_all_less, FireBase_view_cart } from "../../FirebaseEvents/components/fireBaseUniversalAnalytics";
 import { __availableCartItemsObj, __cartActionObj, __Freebieitem_item_props, __updateCartItemProps, cart_view_less_more_coupons } from "./helper";
-import { __sessionStorageSet } from "@/Services/service";
+import { __sessionStorageSet } from "../../Services/service";
 
 export const _CartPageData = (data, noItemsInCart, promotion_name = '') => {
     const customUserAttr = {

@@ -1,5 +1,5 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { __getSlotInfo } from "@/Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
+import { __getSlotInfo } from "../../Services/service";
 import { __getPackAttrProps } from "../Pdp/helper";
 
 export const cartItmsFireBaseObj = (d, itemPosition, filter, btnflow, packAttr = null, promotion_name = '', isCartFreebies = '') => {

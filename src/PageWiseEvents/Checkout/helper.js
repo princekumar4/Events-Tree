@@ -1,5 +1,5 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { __getSlotInfo } from "@/Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
+import { __getSlotInfo } from "../../Services/service";
 import { __getPackAttrs } from "../Pdp/helper";
 
 export const getStepTitle = (step) => {

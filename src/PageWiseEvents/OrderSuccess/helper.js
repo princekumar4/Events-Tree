@@ -1,5 +1,5 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
-import { __getSlotInfo } from "@/Services/service";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
+import { __getSlotInfo } from "../../Services/service";
 
 export const createFireBaseObj = (d, itemPosition, filter, btnflow, orderData, packAttr = null) => {
     const slotInfo = __getSlotInfo(itemPosition);

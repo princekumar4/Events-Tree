@@ -1,4 +1,4 @@
-import { FireBase_view_item_list } from "@/FirebaseEvents/components/fireBaseUniversalAnalytics";
+import { FireBase_view_item_list } from "../../FirebaseEvents/components/fireBaseUniversalAnalytics";
 import { __category_item_props, __L2_cat_data, __L2_cat_item_props } from "./helper";
 
 export const CatL2 = (variant, data, pgSeoH1, CART) => {

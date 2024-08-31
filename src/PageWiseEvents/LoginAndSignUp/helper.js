@@ -1,4 +1,4 @@
-import { eventKeyConfig } from "@/config/eventKeyConfig";
+import { eventKeyConfig } from "../../config/eventKeyConfig";
 
 export const __UserAnalyticsPromotion = (userData = {}, fireBaseE) => {
     let Obj = {
